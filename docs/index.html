@@ -162,16 +162,17 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
+      <!-- Embed the PDF here -->
+      <div class="pdf-container" style="margin-top: 20px;">
+        <iframe src="./static/images/" width="100%" height="500px" style="border: none;"></iframe>
+      </div>
       <h2 class="subtitle has-text-centered">
         <span class="dnerf">APOLLO</span> train an LLaMA-7B model within two weeks with best performance.
       </h2>
     </div>
   </div>
 </section>
+
 
 
 <!-- <section class="hero is-light is-small">
@@ -231,6 +232,12 @@
   </div>
 </section> -->
 
+<style>
+  .texttt {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+  }
+</style>
 
 <section class="section">
   <div class="container is-max-desktop">
@@ -244,17 +251,17 @@
           </p>
           <p>
           In this work, we investigate the redundancy in Adam's learning rate adaption rule and identify that it can be coarsened as a structured learning rate update (channel-wise or tensor-wise).
-          Based on this insight, we propose a novel approach, <span class="has-text-weight-bold has-underline">Ap</span>proximated Gradient Scaling for Mem<span class="has-text-weight-bold has-underline">o</span>ry Efficient <span class="has-text-weight-bold has-underline">LL</span>M <span class="has-text-weight-bold has-underline">O</span>ptimization (<strong>\texttt{APOLLO}</strong>), which approximates the channel-wise learning rate scaling with an auxiliary low-rank optimizer state based on pure <em>random projection</em>.
-          The structured learning rate update rule makes <strong>\texttt{APOLLO}</strong> highly tolerant to further memory reduction with lower rank, halving the rank while delivering similar pre-training performance.
-          We further propose an extreme memory-efficient version, <strong>\texttt{APOLLO-Mini}</strong>, which utilizes tensor-wise scaling with only a rank-1 auxiliary sub-space, achieving <strong>SGD-level memory cost</strong> but superior pre-training performance than Adam(W).
+          Based on this insight, we propose a novel approach, <span class="has-text-weight-bold has-underline">Ap</span>proximated Gradient Scaling for Mem<span class="has-text-weight-bold has-underline">o</span>ry Efficient <span class="has-text-weight-bold has-underline">LL</span>M <span class="has-text-weight-bold has-underline">O</span>ptimization (<span class="texttt">APOLLO</span>), which approximates the channel-wise learning rate scaling with an auxiliary low-rank optimizer state based on pure <em>random projection</em>.
+          The structured learning rate update rule makes <span class="texttt">APOLLO</span> highly tolerant to further memory reduction with lower rank, halving the rank while delivering similar pre-training performance.
+          We further propose an extreme memory-efficient version, <span class="texttt">APOLLO-Mini</span>, which utilizes tensor-wise scaling with only a rank-1 auxiliary sub-space, achieving <strong>SGD-level memory cost</strong> but superior pre-training performance than Adam(W).
           </p>
           <p>
-            We conduct extensive experiments across different tasks and model architectures, showing that the <strong>\texttt{APOLLO}</strong> series performs <strong>generally on-par with, or even better than Adam(W)</strong>. Meanwhile, <strong>\texttt{APOLLO}</strong> achieves <strong>even greater memory savings than GaLore</strong>, by almost eliminating the optimization states in AdamW.
+            We conduct extensive experiments across different tasks and model architectures, showing that the <span class="texttt">APOLLO</span> series performs <strong>generally on-par with, or even better than Adam(W)</strong>. Meanwhile, <span class="texttt">APOLLO</span> achieves <strong>even greater memory savings than GaLore</strong>, by almost eliminating the optimization states in AdamW.
             These savings translate into significant system benefits:
             <ol>
-              <li><strong>Enhanced Throughput:</strong> <strong>\texttt{APOLLO}</strong> and <strong>\texttt{APOLLO-Mini}</strong> achieve up to 3× throughput on a 4×A100-80GB setup compared to Adam by fully utilizing memory to support 4× larger batch sizes.</li>
-              <li><strong>Improved Model Scalability:</strong> <strong>\texttt{APOLLO-Mini}</strong> <em>for the first time</em> enables pre-training a LLaMA-13B model on a single A100 GPU (80G) without requiring other system-level optimizations.</li>
-              <li><strong>Low-End GPU Pre-training:</strong> Combined with quantization, the <strong>\texttt{APOLLO}</strong> series <em>for the first time</em> enables the training of LLaMA-7B from scratch using less than 12 GB of memory.</li>
+              <li><strong>Enhanced Throughput:</strong> <span class="texttt">APOLLO</span> and <span class="texttt">APOLLO-Mini</span> achieve up to 3× throughput on a 4×A100-80GB setup compared to Adam by fully utilizing memory to support 4× larger batch sizes.</li>
+              <li><strong>Improved Model Scalability:</strong> <span class="texttt">APOLLO-Mini</span> <em>for the first time</em> enables pre-training a LLaMA-13B model on a single A100 GPU (80G) without requiring other system-level optimizations.</li>
+              <li><strong>Low-End GPU Pre-training:</strong> Combined with quantization, the <span class="texttt">APOLLO</span> series <em>for the first time</em> enables the training of LLaMA-7B from scratch using less than 12 GB of memory.</li>
             </ol>
           </p>
         </div>
