@@ -273,90 +273,43 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-
-    <div class="columns is-centered">
-
-    <!-- Animation. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Train an LLaMA-7B with 3x throughput</h2>
 
-        <!-- Interpolating. -->
-        <h3 class="title is-4">Interpolating states</h3>
+        <!-- Throughput Video -->
+        <h2 class="title is-3 has-text-centered">Train an LLaMA-7B with 3× Throughput Compared to Adam</h2>
         <div class="content has-text-justified">
           <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
-          </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-        <!--/ Interpolating. -->
-
-        <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+            The following video demonstrates the training throughput achieved with <strong>APOLLO</strong> on the LLaMA-7B model, showing a 3× improvement compared to Adam optimizer.
           </p>
         </div>
         <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
+          <video id="throughput-video" controls muted preload playsinline width="75%">
+            <source src="./static/videos/placeholder_throughput.mp4" type="video/mp4">
+            Your browser does not support the video tag.
           </video>
         </div>
-        <!--/ Re-rendering. -->
+        <br/>
 
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
+        <!-- LLaMA-13B Training Video -->
+        <h2 class="title is-3 has-text-centered">Successful Training for LLaMA-13B Model</h2>
         <div class="content has-text-justified">
           <p>
-            Please check the inofficial implmentation provided by xx.
+            This video showcases the successful training of the LLaMA-13B model using <strong>APOLLO</strong>, highlighting memory efficiency and scalability even on single GPUs.
           </p>
         </div>
+        <div class="content has-text-centered">
+          <video id="llama13b-training-video" controls muted preload playsinline width="75%">
+            <source src="./static/videos/placeholder_llama13b.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
       </div>
     </div>
-    <!--/ Concurrent Work. -->
-
   </div>
 </section>
+
 
 
 <section class="section" id="BibTeX">
