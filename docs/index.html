@@ -63,17 +63,8 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
-          </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
+          <a class="navbar-item" href="https://github.com/VITA-Group/Q-GaLore">
+            Q-Galore
           </a>
         </div>
       </div>
@@ -93,30 +84,30 @@
             <span class="author-block">
               <a href="https://zhuhanqing.github.io/">Hanqing Zhu</a><sup>1, *</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Zhenyu Zhang</a><sup>1, *</sup>,</span>
+              <a href="https://zhenyu.gallery/">Zhenyu Zhang</a><sup>1, *</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Wenyan Cong</a><sup>1</sup>,
+              <a href="https://wenyancong.com/">Wenyan Cong</a><sup>1</sup>,
             </span>
             <span class="author-block">
-              <a href="http://sofienbouaziz.com">Xi Liu</a><sup>2</sup>,
+              <a href="https://www.linkedin.com/in/xi-liu-2b0285173/">Xi Liu</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://www.danbgoldman.com">Sem Park</a><sup>2</sup>,
+              <a href="https://scholar.google.com/citations?user=oBbrl-4AAAAJ&hl=en">Sem Park</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Vikas Chandra</a><sup>2</sup>,
+              <a href="https://v-chandra.github.io//">Vikas Chandra</a><sup>2</sup>,
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Bo Long</a><sup>2</sup>
+              <a href="https://www.linkedin.com/in/bolonglinkedin/">Bo Long</a><sup>2</sup>
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">David Z. Pan</a><sup>1,†</sup>
+              <a href="https://users.ece.utexas.edu/~dpan/">David Z. Pan</a><sup>1,†</sup>
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Zhangyang Wang</a><sup>1,†</sup>
+              <a href="https://vita-group.github.io/group.html">Zhangyang Wang</a><sup>1,†</sup>
             </span>
             <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Jinwon Lee</a><sup>2,†</sup>
+              <a href="https://scholar.google.com/citations?user=lUYLvBgAAAAJ&hl=en">Jinwon Lee</a><sup>2,†</sup>
             </span>
           </div>
 
@@ -151,7 +142,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies"
+                <a href="https://github.com/zhuhanqing/APOLLO"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -176,16 +167,14 @@
                 type="video/mp4">
       </video>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Nerfies</span> turns selfie videos from your phone into
-        free-viewpoint
-        portraits.
+        <span class="dnerf">APOLLO</span> train an LLaMA-7B model within two weeks with best performance.
       </h2>
     </div>
   </div>
 </section>
 
 
-<section class="hero is-light is-small">
+<!-- <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
@@ -240,7 +229,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -251,48 +240,26 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
+          Large language models (LLMs) demonstrate remarkable capabilities but are notoriously memory-intensive during training, particularly with the popular Adam optimizer. This memory burden often necessitates using more GPUs, smaller batch sizes, or high-end hardware, thereby limiting scalability and training efficiency. To address this, various memory-efficient optimizers have been proposed to reduce optimizer memory usage. However, they face key challenges: (i) reliance on costly SVD operations (e.g., GaLore, Fira); (ii) significant performance trade-offs compared to AdamW (e.g., Flora); and (iii) still substantial memory overhead of optimization states in order to maintain competitive performance (e.g., 1/4 rank in GaLore, and full-rank first momentum in Adam-mini).
           </p>
           <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
+          In this work, we investigate the redundancy in Adam's learning rate adaption rule and identify that it can be coarsened as a structured learning rate update (channel-wise or tensor-wise).
+          Based on this insight, we propose a novel approach, <span class="has-text-weight-bold has-underline">Ap</span>proximated Gradient Scaling for Mem<span class="has-text-weight-bold has-underline">o</span>ry Efficient <span class="has-text-weight-bold has-underline">LL</span>M <span class="has-text-weight-bold has-underline">O</span>ptimization (<strong>\texttt{APOLLO}</strong>), which approximates the channel-wise learning rate scaling with an auxiliary low-rank optimizer state based on pure <em>random projection</em>.
+          The structured learning rate update rule makes <strong>\texttt{APOLLO}</strong> highly tolerant to further memory reduction with lower rank, halving the rank while delivering similar pre-training performance.
+          We further propose an extreme memory-efficient version, <strong>\texttt{APOLLO-Mini}</strong>, which utilizes tensor-wise scaling with only a rank-1 auxiliary sub-space, achieving <strong>SGD-level memory cost</strong> but superior pre-training performance than Adam(W).
           </p>
           <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            We conduct extensive experiments across different tasks and model architectures, showing that the <strong>\texttt{APOLLO}</strong> series performs <strong>generally on-par with, or even better than Adam(W)</strong>. Meanwhile, <strong>\texttt{APOLLO}</strong> achieves <strong>even greater memory savings than GaLore</strong>, by almost eliminating the optimization states in AdamW.
+            These savings translate into significant system benefits:
+            <ol>
+              <li><strong>Enhanced Throughput:</strong> <strong>\texttt{APOLLO}</strong> and <strong>\texttt{APOLLO-Mini}</strong> achieve up to 3× throughput on a 4×A100-80GB setup compared to Adam by fully utilizing memory to support 4× larger batch sizes.</li>
+              <li><strong>Improved Model Scalability:</strong> <strong>\texttt{APOLLO-Mini}</strong> <em>for the first time</em> enables pre-training a LLaMA-13B model on a single A100 GPU (80G) without requiring other system-level optimizations.</li>
+              <li><strong>Low-End GPU Pre-training:</strong> Combined with quantization, the <strong>\texttt{APOLLO}</strong> series <em>for the first time</em> enables the training of LLaMA-7B from scratch using less than 12 GB of memory.</li>
+            </ol>
           </p>
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-
-    <!-- Paper video. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
-        <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-    <!--/ Paper video. -->
   </div>
 </section>
 
