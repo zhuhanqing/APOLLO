@@ -242,8 +242,8 @@ def setup_optimization(args, model, trainable_params, param_groups, id_lowrank_p
                 scheduler_dict[p] = get_scheculer(
                     optimizer=optimizer_dict[p],
                     scheduler_type=args.scheduler,
-                    num_training_steps=args.num_training_steps * 2,
-                    warmup_steps=args.warmup_steps * 2,
+                    num_training_steps=args.num_training_steps,
+                    warmup_steps=args.warmup_steps,
                     min_lr_ratio=args.min_lr_ratio,
                 )
 
@@ -345,8 +345,8 @@ def setup_optimization(args, model, trainable_params, param_groups, id_lowrank_p
                 scheduler_dict[p] = get_scheculer(
                     optimizer=optimizer_dict[p],
                     scheduler_type=args.scheduler,
-                    num_training_steps=args.num_training_steps * 2,
-                    warmup_steps=args.warmup_steps * 2,
+                    num_training_steps=args.num_training_steps,
+                    warmup_steps=args.warmup_steps,
                     min_lr_ratio=args.min_lr_ratio,
                 )
 
